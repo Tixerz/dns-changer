@@ -10,10 +10,15 @@ class dns:
         
     def remove(self):
         os.remove(self.name)
+        with open("/etc/resolv.conf","r") as f:
+            lines=f.readlines()
+            for l in lines :
+                if l != f"nameserver {self.ip}":
+                    f.write(l)
+
     
     def write(self):
         with open("/etc/resolv.conf" , "w") as file :
             file.write(f'\nnameserver {self.ip}')
-        
-a = dns("nem" , "1234")
-a.save()
+
+
