@@ -25,6 +25,3 @@ class dns:
             print(f'\nnameserver {self.ip}')
 
 
-a = dns("sex" , "123")
-a.save()
-a.remove()
