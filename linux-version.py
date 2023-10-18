@@ -9,7 +9,7 @@ class dns:
             pk.dump(self , f)
         
     def write(self):
-        with open("/etc/resolv.conf" , "w") as file :
+        with open("/etc/resolv.conf" , "a") as file :
             file.write(f'\nnameserver {self.ip}')
 
 def add_server():
