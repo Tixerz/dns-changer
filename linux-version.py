@@ -1,5 +1,8 @@
 import pickle as pk
 import os
+if os.getuid() != 0:
+    print("you are not admin")
+    exit()
 class dns:
     def __init__(self , name , ip) -> None:
         self.name = name 
